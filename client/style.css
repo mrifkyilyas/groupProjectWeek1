@@ -71,4 +71,21 @@ body {
   }
   #locationCont {
       height: 400px;
+      width: 400px;
+  }
+
+  /* #map { 
+    height: 500px;    
+    width: 500%;            
+  }    */
+
+  .ib {
+    display: inline-block;
+  }
+  #watToDo {
+    position: absolute;
+    left: 1086px;
+    bottom:-439px;
+    height : 700px;
+    width : 26.5%;
   }

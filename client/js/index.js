@@ -55,7 +55,6 @@ function getIndex() {
       headers: {
         token: localStorage.token
       }
-
     })
     .done(function (response) {
       // console.log(response)
@@ -84,9 +83,10 @@ function signOut() {
 $(document).ready(function () {
   $('#sign-out').hide()
   getIndex()
-
-
-
-
-
 })
+
+
+
+
+
+ 
