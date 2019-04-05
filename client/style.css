@@ -74,10 +74,10 @@ body {
       width: 400px;
   }
 
-  #map { 
-    height: 300px;    
-    width: 100%;            
-  }   
+  /* #map { 
+    height: 500px;    
+    width: 500%;            
+  }    */
 
   .ib {
     display: inline-block;

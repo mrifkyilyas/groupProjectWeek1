@@ -27,11 +27,12 @@ function searchHoliday() {
             method: 'GET',
         })
         .done(function (response) {
-            if(response.holidays.length==[0]){
+            if(response.holidays.length){
  
                 $('#bulan-libur').append(`<li>sayang banget bulan ini tidak ada hari libur<li>`)
+
             }else{
-                response.holidays.map(holiday=>{
+                response.holidays.forEach(holiday=>{
                     $('#hari-libur').append(`<li>${holiday.name}(${holiday.date})<li>`)
                 })
             }
@@ -123,6 +124,9 @@ function createTask(){
         $('#date').val(null),
         $('#description').val(null),
         $('#location').val(null)
+
+        $('#watToDo').append(` <br><br> <h4>Newly Added: </h4>`)
+        $('#watToDo').append(` <li> Task Name: ${response.name} Date: ${response.start}</li>`)
     })
     .fail(function (jqXHR, textStatus) {
         console.log('request failed', textStatus)

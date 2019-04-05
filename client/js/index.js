@@ -83,11 +83,6 @@ function signOut() {
 $(document).ready(function () {
   $('#sign-out').hide()
   getIndex()
-
-
-
-
-
 })
 
 

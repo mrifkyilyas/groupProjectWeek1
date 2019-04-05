@@ -30,7 +30,8 @@
 </head>
 
 <body>
-  <div style="float:right;" class="g-signin2" id="sign-in" data-onsuccess="onSignIn"></div>
+
+  <div style="float:right;" class="g-signin2" id="sign-in" data-onsuccess="onSignIn">Sign In</div>
   <div style="float:right;" id="sign-out"><a href="#" onclick="signOut();">Sign out</a></div>
 
   <h1 id="title">My ToDo List</h1><br><br><br><br>
@@ -100,7 +101,7 @@
 
 <div class="ib" id="watToDo">
   <ol id="list-list-list" style="list-style-type:number">
-    
+    <h3>Task List</h3>
   </ol>
 </div>
 
@@ -134,9 +135,10 @@
     </form>
   </div>
   <script src="js/map.js"></script>
- <div id="map"></div>
 
- <div>
+
+ <div style="margin:auto">
+   <h3>List Hari Libur(holiday API)</h3>
   <form action="POST" id="search-holiday">
       <select id="bulan">
           <option value="1">januari</option>
@@ -176,7 +178,7 @@
     </script>
 
   
-
+<div id="map"></div>
   
 </div>
 
