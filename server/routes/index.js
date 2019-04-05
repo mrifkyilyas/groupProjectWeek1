@@ -1,8 +1,12 @@
 const express = require('express')
 const router =  express.Router()
-const { getIndex  } = require('../controllers')
+const { getIndex,googleLogin  } = require('../controllers')
+const {isLogin} = require('../middleware/islogin')
 
-router.get('/',getIndex)
+router.post('/google-login',googleLogin)
+router.get('/index',isLogin, getIndex)
+// router.use('/',isLogin)
+
 
 
 
