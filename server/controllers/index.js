@@ -58,7 +58,9 @@ class Controller {
 
 
                 const token = jwt.sign({
-                    id: user._id,
+                    _id: user._id,
+                    name:user.name,
+                    role:user.role,
                     email:user.email
                 },process.env.JWT_SECRET)
                 console.log(token)

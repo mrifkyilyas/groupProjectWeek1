@@ -1,31 +1,64 @@
 const Task = require('../models/task')
-
+const jwt = require('jsonwebtoken')
 
 class TaskController {
     static create(req,res) {
-        Task.create({
-            name:"testaaaa",
-            start: new Date,
-            end: new Date,
-            description: "hahahaha",
-            status: false
-        })
-         .then(data => {
-             res.json(data)
-         })
-         .catch(err => {
-             res.json(err)
-         })
+        try {
+            let decoded = jwt.verify(req.headers.token, process.env.JWT_SECRET)
+            console.log(decoded)
+
+            Task.create({
+                user: decoded._id,
+                name: req.body.name,
+                start: req.body.start,
+                end: null,
+                location: req.body.location,
+                description: req.body.description,
+                status: false
+            })
+             .then(data => {
+                 console.log('masuk then create')
+                 console.log(data)
+                 res.status(201).json(data)
+             })
+             .catch(err => {
+                 console.log('masuk catch create')
+                 res.status(500).json(err)
+             })
+        } catch {
+            res.statu(500).json(err)
+        }
+        
     }
 
     static findAll(req,res) {
-        Task.find()
-        .then (datas => {
-            res.json(datas)
-        })
-        .catch(err => {
-            res.json(err)
-        })
+
+        try {
+            let decoded = jwt.verify(req.headers.token, process.env.JWT_SECRET)
+            console.log(decoded)
+
+            Task.find({user:decoded._id})
+            .populate('user')
+            .then (datas => {
+                res.json(datas)
+            })
+            .catch(err => {
+                res.json(err)
+            })
+        }
+        catch {
+            res.statu(500).json(err)
+        }
+        
+
+        // Task.find({user:"5ca6cecfaf830035134a7001"})
+        // .populate('user')
+        // .then (datas => {
+        //     res.json(datas)
+        // })
+        // .catch(err => {
+        //     res.json(err)
+        // })
     }
 
     static filterByName(req,res) { //filter dengan query

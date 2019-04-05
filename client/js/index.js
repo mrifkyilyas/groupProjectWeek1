@@ -55,7 +55,6 @@ function getIndex() {
       headers: {
         token: localStorage.token
       }
-
     })
     .done(function (response) {
       // console.log(response)
@@ -90,3 +89,9 @@ $(document).ready(function () {
 
 
 })
+
+
+
+
+
+ 
