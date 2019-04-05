@@ -16,11 +16,6 @@ app.use('/',router)
 
 
 
-
-
-
-
-
 app.listen(port,()=>{
     console.log(`working on ${port}`)
 })
