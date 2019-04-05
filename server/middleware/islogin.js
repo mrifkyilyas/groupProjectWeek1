@@ -10,5 +10,5 @@ module.exports = { isLogin : function(req,res,next){
         res.status(400).json({msg:'authetication failed'})
     } 
 
-    console.log(localStorage.token)
+    // console.log(localStorage.token)
 }}
