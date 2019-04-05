@@ -14,7 +14,7 @@
     type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
   <link href='./style.css' rel='stylesheet' type='text/css'>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
     integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
@@ -29,13 +29,13 @@
 
 <body>
   <div style="float:right;" class="g-signin2" id="sign-in" data-onsuccess="onSignIn"></div>
-  <div  style="float:right;" id="sign-out"><a href="#" onclick="signOut();">Sign out</a></div>
-  
+  <div style="float:right;" id="sign-out"><a href="#" onclick="signOut();">Sign out</a></div>
+
   <h1 id="title">My ToDo List</h1><br><br><br><br>
   <div class="w-75 h-50 bn-warning" id="calendarCont">
     <header>
       <button>«</button>
-      <h2>April 2019</h2>
+      <h2 id="monthYear">April 2019</h2>
       <button>»</button>
     </header>
     <table>
@@ -103,26 +103,21 @@
           <input name="ToDo" type="text" class="form-control" id="ToDo" placeholder="something to do.." required>
         </div>
         <div class="col-md-4 mb-3">
-          <label for="startTime">Time Start</label>
-          <input name="start" type="text" class="form-control" id="start" placeholder="when it will start.." required>
-        </div>
-        <div class="col-md-4 mb-3">
-          <label for="endTime">Time End</label>
-          <input name="end" type="text" class="form-control" id="end" placeholder="when it will end.." required>
-        </div><br>
-      </div>
-      <div class="form-row">
-        <div class="col-md-5 mb-3">
-          <label for="location">Location</label>
-          <input name="location" type="text" class="form-control" id="location"
-            placeholder="where it will take place..">
+          <label for="startTime">Date</label>
+          <input name="date" type="text" class="form-control" id="date" placeholder="on what date it will start.."
+            required>
         </div>
         <div class="col-md-7 mb-3">
           <label for="description">Description</label>
           <textarea name="location" class="form-control" id="description" rows="3"
             placeholder="brief description about it.."></textarea>
         </div>
-      </div><br>
+        <div class="col-lg-10 mb-2" id="locationCont">
+          <label for="location">Location</label>
+          <input name="location" type="text" class="form-control" id="location"
+            placeholder="where it will take place..">
+        </div>
+      </div>
       <div class="col-sm-1">
         <button class="btn btn-primary" type="submit" id="submitToDo">Submit!</button>
       </div>

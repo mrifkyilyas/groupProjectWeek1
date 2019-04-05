@@ -69,3 +69,6 @@ body {
   #title {
       text-align: center;
   }
+  #locationCont {
+      height: 400px;
+  }
